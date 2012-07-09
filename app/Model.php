@@ -56,7 +56,19 @@
 
          return $alimentos;
      }
+     public function buscarPorEnergia($energia_min,$energia_max)
+     {
+         $sql = "select * from alimentos where energia between " . $energia_min . " and ". $energia_max ." order by energia desc";
+         $result = mysql_query($sql, $this->conexion);
 
+         $alimentos = array();
+         while ($row = mysql_fetch_assoc($result))
+         {
+             $alimentos[] = $row;
+         }
+
+         return $alimentos;
+     }
      public function dameAlimento($id)
      {
          $id = htmlspecialchars($id);
