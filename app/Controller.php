@@ -15,7 +15,7 @@ class Controller {
                         Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
 
         $params = array(
-            'alimentos' => $m->dameAlimentos(),
+            'resultado' => $m->dameAlimentos(),
         );
 
         require __DIR__ . '/templates/mostrarAlimentos.php';
@@ -73,7 +73,7 @@ class Controller {
         require __DIR__ . '/templates/buscarPorNombre.php';
     }
 
-    public function buscarAlimentosPorEnergia() {
+    public function buscarPorEnergia() {
         $params = array(
             'energia_min' => '',
             'energia_max' => '',
