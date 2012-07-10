@@ -1,6 +1,6 @@
 <?php ob_start() ?>
 
-<form name="formBusqueda" action="index.php?ctl=busquedaCombinada" method="POST">
+<form name="formBusqueda" action="index.php?ctl=buscarAlimentosCombinada" method="POST">
 
   <table>
       <tr>

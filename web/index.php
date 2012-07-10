@@ -12,7 +12,9 @@
      'listar' => array('controller' =>'Controller', 'action' =>'listar'),
      'insertar' => array('controller' =>'Controller', 'action' =>'insertar'),
      'buscar' => array('controller' =>'Controller', 'action' =>'buscarPorNombre'),
-     'ver' => array('controller' =>'Controller', 'action' =>'ver')
+     'ver' => array('controller' =>'Controller', 'action' =>'ver'),
+     'buscarAlimentosPorEnergia' => array('controller' =>'Controller', 'action' =>'buscarPorEnergia'),
+     'buscarAlimentosCombinada' => array('controller' =>'Controller', 'action' =>'busquedaCombinada')
  );
 
  // Parseo de la ruta
