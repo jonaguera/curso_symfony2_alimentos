@@ -83,6 +83,45 @@
          require __DIR__ . '/templates/buscarPorNombre.php';
      }
 
+     public function busquedaCombinada()
+     {
+         $params = array(
+             'energia_min' => '',
+             'energia_max' => '',
+             'proteina_min' => '',
+             'proteina_max' => '',
+             'hidratocarbono_min' => '',
+             'hidratocarbono_max' => '',
+             'fibra_min' => '',
+             'fibra_max' => '',
+             'grasatotal_min' => '',
+             'grasatotal_max' => '',
+             'resultado' => array(),
+         );
+
+         $m = new Model(Config::$mvc_bd_nombre, Config::$mvc_bd_usuario,
+                     Config::$mvc_bd_clave, Config::$mvc_bd_hostname);
+
+         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+             $params['nombre'] = $_POST['nombre'];
+             $params['resultado'] = $m->busquedaCombinada(array(
+                                                'energia_min' => $_POST['energia_min'],
+                                                'energia_max' => $_POST['energia_max'],
+                                                'proteina_min' => $_POST['proteina_min'],
+                                                'proteina_max' => $_POST['proteina_max'],
+                                                'hidratocarbono_min' => $_POST['hidratocarbono_min'],
+                                                'hidratocarbono_max' => $_POST['hidratocarbono_max'],
+                                                'fibra_min' => $_POST['fibra_min'],
+                                                'fibra_max' => $_POST['fibra_max'],
+                                                'grasatotal_min' => $_POST['grasatotal_min'],
+                                                'grasatotal_max' => $_POST['grasatotal_max']
+                                                        )
+                     );
+         }
+
+         require __DIR__ . '/templates/busquedaCombinada.php';
+     }     
+     
      public function ver()
      {
          if (!isset($_GET['id'])) {
